@@ -14,7 +14,16 @@ st.set_page_config(
     layout="centered",
 )
 
+# Load API Key Securely from Streamlit Secrets
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
+# Check if API key is missing
+if not GOOGLE_API_KEY:
+    st.error("Google API Key is missing! Set it in Streamlit Secrets.")
+    st.stop()
+
+# Configure Google Gemini AI model
+gen_ai.configure(api_key=GOOGLE_API_KEY)
 # Load API Key
 #GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 #if not GOOGLE_API_KEY:
