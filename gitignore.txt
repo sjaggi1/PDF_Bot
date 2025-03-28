@@ -1,0 +1,21 @@
+# Ignore virtual environments
+venv/
+.venv/
+
+# Ignore system-specific files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment files
+.env
+.env.local
+.DS_Store
+
+# Ignore VS Code and PyCharm files
+.vscode/
+.idea/
+
+# Ignore Streamlit session cache
+.streamlit/
