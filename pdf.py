@@ -14,11 +14,18 @@ st.set_page_config(
     layout="centered",
 )
 
+
 # Load API Key
+#GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+#if not GOOGLE_API_KEY:
+#    st.error("Google API Key is missing! Set it in your environment variables.")
+# Get API Key
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+# Check if API key is missing
 if not GOOGLE_API_KEY:
-    st.error("Google API Key is missing! Set it in your environment variables.")
-    st.stop()
+    raise ValueError("Google API Key is missing! Set it in your .env file.")
+#    st.stop()
 
 # Configure Google Gemini AI model
 gen_ai.configure(api_key=GOOGLE_API_KEY)
