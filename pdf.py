@@ -24,20 +24,6 @@ if not GOOGLE_API_KEY:
 
 # Configure Google Gemini AI model
 gen_ai.configure(api_key=GOOGLE_API_KEY)
-# Load API Key
-#GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-#if not GOOGLE_API_KEY:
-#    st.error("Google API Key is missing! Set it in your environment variables.")
-# Get API Key
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-
-# Check if API key is missing
-if not GOOGLE_API_KEY:
-    raise ValueError("Google API Key is missing! Set it in your .env file.")
-#    st.stop()
-
-# Configure Google Gemini AI model
-gen_ai.configure(api_key=GOOGLE_API_KEY)
 try:
     model = gen_ai.GenerativeModel("gemini-1.5-pro")
 except Exception as e:
