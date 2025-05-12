@@ -25,7 +25,7 @@ if not GOOGLE_API_KEY:
 # Configure Google Gemini AI model
 gen_ai.configure(api_key=GOOGLE_API_KEY)
 try:
-    model = gen_ai.GenerativeModel("gemini-1.5-pro")
+    model = gen_ai.GenerativeModel("gemini-2.0-flash")
 except Exception as e:
     st.error(f"Failed to load Gemini model: {e}")
     st.stop()
